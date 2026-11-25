@@ -1,0 +1,25 @@
+STUDIO JANETE SOUZA — SITE
+
+O site está pronto para publicar como site estático. Para colocar suas fotos, salve cada imagem em assets/ e edite o arquivo content.js.
+
+As 15 fotos enviadas estão na galeria, sem legendas. A antiga foto número 4 (mulher com blusa rosa) foi removida e as demais foram renumeradas na ordem correta. Para trocar ou adicionar uma foto, use o mesmo formato:
+
+  { image: "assets/cabelo-novo.jpg", alt: "Descrição acessível da foto" }
+
+Para trocar preços, abra content.js e altere o texto do valor ao lado do serviço. Os valores estão separados nas categorias Cabelos, Tratamentos e Sobrancelhas.
+
+Para trocar telefone, Instagram, endereço ou link de avaliação, altere whatsapp, phoneDisplay, instagramHandle, instagramUrl, addressUrl, mapsEmbedUrl e reviewUrl no início de content.js. O número do WhatsApp deve ficar com 55 + DDD + número, só com dígitos.
+
+O endereço exibido é Rua José Rodrigues, 120 — Jardim Paraíso II (Nova Veneza), Sumaré - SP. O mapa incorporado está configurado para mostrar a região do Studio em vista de satélite. O ícone de localização no rodapé abre o endereço no Google Maps.
+
+PUBLICAR DE GRAÇA
+
+Este site pode ser enviado para o Cloudflare Pages sem programação:
+1. Crie uma conta gratuita no Cloudflare.
+2. Abra Workers & Pages e escolha criar uma aplicação por envio de arquivos (Direct Upload / Drag and drop).
+3. Envie todos os arquivos desta pasta, incluindo a pasta assets.
+4. Publique. O Cloudflare fornecerá um endereço terminado em pages.dev.
+
+Quando fizer alterações, envie a pasta atualizada como uma nova versão do site. Depois grave esse endereço em uma tag NFC. O endereço não muda ao atualizar o site.
+
+NOTA: a página usa fontes hospedadas no Google Fonts; sem internet, o navegador usa fontes locais alternativas.
