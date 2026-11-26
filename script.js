@@ -73,7 +73,7 @@ document.querySelectorAll("[data-review-link]").forEach(link => {
 const mapFrame = document.querySelector("[data-map-frame]");
 if (mapFrame) mapFrame.src = salon.mapsEmbedUrl;
 
-const gallery = document.querySelector("#gallery");
+const tabs = document.querySelector("#category-tabs");
 
 salon.gallery.forEach((item, index) => {
   const card = document.createElement("article");
