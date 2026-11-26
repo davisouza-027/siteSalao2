@@ -73,16 +73,53 @@ document.querySelectorAll("[data-review-link]").forEach(link => {
 const mapFrame = document.querySelector("[data-map-frame]");
 if (mapFrame) mapFrame.src = salon.mapsEmbedUrl;
 
-const tabs = document.querySelector("#category-tabs");
+const gallery = document.querySelector("#gallery");
+const galleryMoreButton = document.querySelector("#gallery-more");
+
+const initialGalleryCount = 12;
 
 salon.gallery.forEach((item, index) => {
   const card = document.createElement("article");
+
   card.className = `gallery-card gallery-card-${index + 1} reveal`;
-  card.innerHTML = `<img class="gallery-photo" src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async">`;
+
+  card.innerHTML = `
+    <img
+      class="gallery-photo"
+      src="${item.image}"
+      alt="${item.alt}"
+      loading="lazy"
+      decoding="async"
+    >
+  `;
+
+  if (index >= initialGalleryCount) {
+    card.hidden = true;
+    card.setAttribute("aria-hidden", "true");
+  }
+
   gallery.append(card);
 });
 
-const tabs = document.querySelector("#category-tabs");
+if (galleryMoreButton && salon.gallery.length > initialGalleryCount) {
+  galleryMoreButton.hidden = false;
+
+  galleryMoreButton.addEventListener("click", () => {
+
+    gallery.querySelectorAll(".gallery-card[hidden]").forEach(card => {
+      card.hidden = false;
+      card.removeAttribute("aria-hidden");
+    });
+
+    galleryMoreButton.hidden = true;
+
+    galleryMoreButton.setAttribute("aria-expanded", "true");
+
+    observeReveals(
+      gallery.querySelectorAll(".gallery-card:not(.reveal-ready)")
+    );
+  });
+}
 const list = document.querySelector("#service-list");
 
 function showCategory(index) {
