@@ -25,3 +25,27 @@
 .route-button span {
   font-size: 13px;
 }
+
+/* Ícones do Google Maps e Waze */
+.route-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.route-button .route-brand-icon {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  flex: 0 0 20px;
+}
+
+.route-button svg path,
+.route-button svg circle {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
